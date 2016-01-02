@@ -50,11 +50,10 @@
 <bean class="com.hta.member.controller.LoginChangePwController"></bean>
 
 <bean id="studyroomService" class="com.hta.studyroom.service.StudyroomServiceImpl">
-
 </bean>															
 
 <bean class="com.hta.studyroom.controller.ReservationController">
-	
+	<property name="studyroomService" ref="studyroomService"></property>
 </bean>
 
 </beans>

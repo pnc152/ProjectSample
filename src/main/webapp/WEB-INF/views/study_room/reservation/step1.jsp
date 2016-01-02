@@ -123,6 +123,8 @@ Modernizr.load({
 	
 	
 	<form action="reservation2.study" method="POST">
+	<input type="hidden" name="member_email" /><!-- 이부분 sql에 비교에 기준인 b_seq를 히든으로 컨트롤에 넘겨줌 -->
+	
 		
 	<p style="margin-top: 50px">
 	<label><h3>예약하실 날짜를 선택해 주세요</h3></label>
@@ -154,11 +156,7 @@ Modernizr.load({
 	<jsp:include page="table.jsp"></jsp:include>
 	</p>
 	</div>
-	<div>
-		<p>
-		예약자 계정 확인 :${email}
-		</p>
-		</div>
+	
 	
 	<button class="btn btn-danger" type="button" name="selectcancel" value="cancle" onclick="fnBack()">취소</button>
 	<button class="btn btn-primary" type="submit" name="selectDay" value="next" >다음</button>

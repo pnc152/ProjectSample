@@ -3,7 +3,6 @@ package com.hta.studyroom.service;
 import java.sql.SQLException;
 import java.util.List;
 
-import com.hta.board.repository.BoardDto;
 import com.hta.studyroom.repository.StudyroomDto;
 //인터페이스
 public interface StudyroomService {
