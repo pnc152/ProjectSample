@@ -11,7 +11,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import com.hta.board.repository.BoardDto;
+
+import com.hta.studyroom.repository.StudyroomDto;
 
 
 //실제 StudyroomMapper.xml과 sqlmapConfig.xml에서 설정한것을 실행하기위해 클래스 파일을 만들었다.
@@ -29,33 +30,27 @@ public class StudyroomManager {
 	}
 	
 	public static List getRoomResList(){ //반드시 public static 타입으로 만들어져야한다.
-		List list = null;
+		List reservation_list = null;
 		SqlSession session = sqlFactory.openSession();//세션별로 sql 작업할수 있도록 열어놓는것
-		list = session.selectList("getRoomResList");//selectList메서드 외에 delete 등 메서드가 더있다. getRoomResList는  StudyroomMapper.xml에서 설정한 select의 id이다.
-		//즉, session.selectList("getList");는 dto 타입으로 DB에서 가져온 결과값을 가져온다. 거기에 list에 집어넣어서 BoardServiceImpl.java에서 getList()메서드를 불러 사용하면 끝이다.
-		return list;
+		reservation_list = session.selectList("getRoomResList");//selectList메서드 외에 delete 등 메서드가 더있다. getRoomResList는  StudyroomMapper.xml에서 설정한 select의 id이다.
+		//즉, session.selectList("getList");는 dto 타입으로 DB에서 가져온 결과값을 가져온다. 거기에 reservation_list에 집어넣어서 StudyroomServiceImpl.java에서 getRoomResList()메서드를 불러 사용하면 끝이다.
+		return reservation_list;
 	}
 	
-	public static void write(BoardDto dto){
+	public static void resWrite(StudyroomDto studyroomdto){
 		SqlSession session = sqlFactory.openSession();
-		session.insert("write", dto);//boardMapper.xml에 id가 write인 메서드에 dto를 param으로 넘겨준다.
-		session.commit();//insert, update, delete는 commit()을 해줘야 완성이 된다.
+		session.insert("resWrite", studyroomdto);//stutyroomMapper.xml에 id가 resWrite인 메서드에 studyroomdto를 파라미터 값으로 넘겨준다.
+		session.commit();//insert, update, delete는  commit()을 해줘야 완성이 된다.
 	}
-	public static BoardDto finBySeq(int seq){
+	public static StudyroomDto findByRes_num(int reservation_num){
 		SqlSession session = sqlFactory.openSession();
-		BoardDto dto = session.selectOne("findBySeq", seq);
-		return dto;
+		StudyroomDto studyroomdto = session.selectOne("findByRes_num", reservation_num);
+		return studyroomdto;
 	}
-	public static void delete(int seq){
+	public static void resDelete(int reservation_num){
 		SqlSession session = sqlFactory.openSession();
-		session.delete("delete", seq);
+		session.delete("resDelete", reservation_num);
 		session.commit();
 	}
 	
-	public static void update(BoardDto dto){
-		SqlSession session = sqlFactory.openSession();
-		//System.out.println("업데이트 최종내용"+dto.getB_content());
-		session.update("update", dto);
-		session.commit();
-	}
 }

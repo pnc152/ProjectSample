@@ -120,16 +120,18 @@ Modernizr.load({
 <!-- 위쪽은 header.css 대신 사용하는 부분. 탬플릿에서 가져왔다. -->
 
 <div class="container" align="center" id="resview" style="margin-top: 50px" ><img src="images/hta_res.jpg" alt="" />
+	
+	
 	<form action="reservation2.study" method="POST">
 		
 	<p style="margin-top: 50px">
 	<label><h3>예약하실 날짜를 선택해 주세요</h3></label>
-	<input type="date" name="day" id="day" width="90px"/>
+	<input type="date" name="reservation_date" id="day" width="90px"/>
 	</p>
 	 <p>
    <fieldset>
     <label for="files"><h3>사용 시간 설정</h3></label>
-    <select name="files" id="files">
+    <select name="reservation_time" id="files">
       
       <optgroup label="morning" >
         <option value="08:00~10:00">08:00~10:00</option>

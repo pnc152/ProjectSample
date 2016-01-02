@@ -14,7 +14,7 @@ public interface StudyroomService {
 	public StudyroomDto findByRes_num(int reservation_num) throws SQLException;
 	
 	//예약 저장
-	public void resWrite(StudyroomDto sturdyroomdto) throws SQLException;
+	public void resWrite(StudyroomDto studyroomdto) throws SQLException;
 	
 	//예약 삭제
 	public void resDelete(int reservation_num) throws SQLException;

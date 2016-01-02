@@ -39,7 +39,7 @@
 <body>
 	
 	
-	<table border="2" style="border-color:black;" >
+	<table name="table_num" border="2" style="border-color:black;" >
 		<tr>
 			<td><label><input type="checkbox" />1번 테이블</label></td>
 			<td><label><input type="checkbox" />2번 테이블</label></td>

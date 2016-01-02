@@ -7,6 +7,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.hta.studyroom.repository.StudyroomDto;
 
+import mybatis.StudyroomManager;
+
 
 //이곳은 스터디룸 예약에 관련된 DB작업을  하는 클래스. StudyroomService interface를 상속받았다. Mybatis를 사용.
 public class StudyroomServiceImpl implements StudyroomService {
@@ -20,22 +22,25 @@ public class StudyroomServiceImpl implements StudyroomService {
 	//예약 리스트 전체보기
 	public List getRoomResList() throws SQLException {
 		
-		return null;
+		return StudyroomManager.getRoomResList();
 	}
-	//예약 내용 읽기
-	public StudyroomDto findByRes_num(int reservation_num) throws SQLException {
-		
-		return null;
-	}
+	
 	//예약 쓰기 기능
 	public void resWrite(StudyroomDto sturdyroomdto) throws SQLException {
 	
-
+		StudyroomManager.resWrite(sturdyroomdto);
 	}
+	
+	//예약 내용 읽기
+		public StudyroomDto findByRes_num(int reservation_num) throws SQLException {
+			
+		return StudyroomManager.findByRes_num(reservation_num);	
+		}
+		
 	//예약 삭제 기능 - 차후 예약 취소쪽으로 생각
 	public void resDelete(int reservation_num) throws SQLException {
 		
-
+		StudyroomManager.resDelete(reservation_num);
 	}
 
 }

@@ -49,6 +49,12 @@
 
 <bean class="com.hta.member.controller.LoginChangePwController"></bean>
 
-<bean class="com.hta.studyroom.controller.ReservationController"></bean>
+<bean id="studyroomService" class="com.hta.studyroom.service.StudyroomServiceImpl">
+
+</bean>															
+
+<bean class="com.hta.studyroom.controller.ReservationController">
+	
+</bean>
 
 </beans>

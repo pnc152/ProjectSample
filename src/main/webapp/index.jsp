@@ -91,7 +91,7 @@ Modernizr.load({
           <option value="index.jsp">Home</option>
           <option value="about.jsp">About Us</option>
           <option value="gallery.jsp">Gallery</option>
-          <option value="contact.jsp">Contact Us</option>
+          <option value="reservation.study">스터디좌석 예약하기</option>
           <option value="blog.jsp">Blog</option>
         </select>
       </form>
