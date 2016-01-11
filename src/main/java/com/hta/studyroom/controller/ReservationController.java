@@ -1,5 +1,6 @@
 package com.hta.studyroom.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,20 +55,30 @@ public class ReservationController {
 	
 	*/
 	
-	@RequestMapping(value="/reservation2.study", method=RequestMethod.POST)
-	public ModelAndView submit(@ModelAttribute StudyroomDto studyroomdto, HttpSession session){
+	@RequestMapping(value="/reservation2.study", method=RequestMethod.POST )
+	public ModelAndView submit(@ModelAttribute StudyroomDto studyroomdto, HttpSession session, HttpServletRequest req){
+
+		System.out.println("예약 저장....");
+		System.out.println(studyroomdto.getMember_email());
+		System.out.println(studyroomdto.getReservation_date());
+		System.out.println(studyroomdto.getTable_num());
+		System.out.println(studyroomdto.getReservation_time());
+		System.out.println(studyroomdto.getClass());
 		try {
-//			Member result = memberService.authenticate((String)session.getAttribute("email"), (String)session.getAttribute("password"));//이메일,비번 인증
 			
-//			if(result != null){ // 값이 null아닌경우
-				//session.setAttribute("name", result.getMember_name()); //이름을 seesion에 저장 누가 로그인 성공했는지 이름을 출력하기위해서...
 			
+			//계정을 세션에 저장.
 			String memberEmail = (String)session.getAttribute("email");
 				session.setAttribute("member_email", memberEmail); //session에 이메일값 저장.
 				studyroomdto.setMember_email(memberEmail);
-//			}
-			
+				
+			String memberName = (String) session.getAttribute("name");
+				session.setAttribute("member_name", memberName);
+				studyroomdto.setMember_name(memberName);
+				
+				//step1.jsp에서 전달받은 데이터를 스터디룸 좌석 예약 DB에 입력
 				studyroomService.resWrite(studyroomdto);
+				
 		} catch (Exception err) {
 			System.out.println("스터디룸 좌석 예약 부분:"+ err);
 		}
@@ -76,15 +87,20 @@ public class ReservationController {
 		mav.addObject("studyroomdto", studyroomdto);
 		
 		
+		
+		
+		
 		System.out.println("예약 저장....");
 		System.out.println(studyroomdto.getMember_email());
 		System.out.println(studyroomdto.getReservation_date());
 		System.out.println(studyroomdto.getTable_num());
 		System.out.println(studyroomdto.getReservation_time());
 		System.out.println(studyroomdto.getClass());
-		System.out.println();
+		System.out.println(studyroomdto.getMember_name());
+		
 		return mav;
 	}
+	
 	
 
 }

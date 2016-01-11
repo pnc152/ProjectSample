@@ -11,7 +11,8 @@
   	<param-name>contextConfigLocation</param-name><!--aplicationContext.xml파일 위치 설정 -->
   	<param-value>
   		/WEB-INF/conf/applicationContext.xml
-  	</param-value>
+  	
+  	</param-value><!-- security-context.xml sha256을 통한 암호화 작업 -->
   </context-param>
   
   
@@ -27,8 +28,8 @@
   	<filter-name>filterEncoding</filter-name>
   	<url-pattern>/*</url-pattern><!-- 모든 것을 처리 -->
   </filter-mapping>
-  
-  
+
+	
   
   
   

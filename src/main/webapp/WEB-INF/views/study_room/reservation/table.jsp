@@ -15,7 +15,7 @@
 			var cnt = $("#person").val();
 
 			// 셀렉트박스의 값과 체크박스중 체크된 갯수가 같을때, 다른 체크박스들을 disable 처리
-			if (":checkbox:checked"){
+			if (":checkbox:checked") {
 				$(":checkbox").attr("disabled", "disabled");
 			}
 			// 체크된 갯수가 다르면 활성화 시킴
@@ -30,28 +30,120 @@
 			$(":checkbox").removeAttr("disabled");
 		});
 	});
-	function fnCancel(){
+	function fnCancel() {
 		$(":checkbox").removeAttr("checked");
 		$(":checkbox").removeAttr("disabled");
 	}
 </script>
 </head>
 <body>
+
+		<form action="" method="POST" >
+<!-- 	<table name="table_num"> -->
+		<div class="tableBox" >
+							<div class="box">
+								<strong>1번 테이블</strong>
+								<div class="info">좌석수 : 6인석</div>
+								<div class="marking">예약상태 : 예약중이라면 빨간색으로 예약중이라고 표시</div><br />
+								<input type="radio" name="table_num" value="1" />
+							</div>
+											<div class="box">
+								<strong>2번 테이블</strong>
+								<div class="info">좌석수 : 6인석</div>
+								<div class="marking">예약상태 : 예약중이아니라면 초록색으로 예약가능 표시</div><br />
+								<input type="radio" name="table_num" value="2" />
+							</div>
+							<div class="box">
+								<strong>3번 테이블</strong>
+								<div class="info">좌석수 : 6인석</div>
+								<div class="marking">예약상태 : 예약중이아니라면 초록색으로 예약가능 표시</div><br />
+								<input type="radio" name="table_num" value="3" />
+							</div>
+							<div class="box">
+								<strong>4번 테이블</strong>
+								<div class="info">좌석수 : 6인석</div>
+								<div class="marking">예약상태 : 예약중이아니라면 초록색으로 예약가능 표시</div><br />
+								<input type="radio" name="table_num" value="4" />
+							</div>
+							<div class="box">
+								<strong>5번 테이블</strong>
+								<div class="info">좌석수 : 8인석</div>
+								<div class="marking">예약상태 : 예약중이아니라면 초록색으로 예약가능 표시</div><br />
+								<input type="radio" name="table_num" value="5" />
+							</div>
+							<div class="box">
+								<strong>6번 테이블</strong>
+								<div class="info">좌석수 : 8인석</div>
+								<div class="marking">예약상태 : 예약중이아니라면 초록색으로 예약가능 표시</div><br />
+								<input type="radio" name="table_num" value="6" />
+							</div>
+							<div class="box">
+								<strong>7번 테이블</strong>
+								<div class="info">좌석수 : 8인석</div>
+								<div class="marking">예약상태 : 예약중이아니라면 초록색으로 예약가능 표시</div><br />
+								<input type=radio name="table_num" value="7" />
+							</div>
+							<div class="box">
+								<strong>8번 테이블</strong>
+								<div class="info">좌석수 : 8인석</div>
+								<div class="marking">예약상태 : 예약중이아니라면 초록색으로 예약가능 표시</div><br />
+								<input type="radio" name="table_num" value="8" />
+							</div>
+							<div class="box">
+								<strong>9번 테이블</strong>
+								<div class="info">좌석수 : 4인석</div>
+								<div class="marking">예약상태 : 예약중이아니라면 초록색으로 예약가능 표시</div><br />
+								<input type="radio" name="table_num" value="9" />
+							</div>
+							<div class="box">
+								<strong>10번 테이블</strong>
+								<div class="info">좌석수 : 4인석</div>
+								<div class="marking">예약상태 : 예약중이아니라면 초록색으로 예약가능 표시</div><br />
+								<input type="radio" name="table_num" value="10" />
+							</div>
+							<div class="box">
+								<strong>11번 테이블</strong>
+								<div class="info">좌석수 : 4인석</div>
+								<div class="marking">예약상태 : 예약중이아니라면 초록색으로 예약가능 표시</div><br />
+								<input type="radio" name="table_num" value="11" />
+							</div>
+							<div class="box">
+								<strong>12번 테이블</strong>
+								<div class="info">좌석수 : 4인석</div>
+								<div class="marking">예약상태 : 예약중이아니라면 초록색으로 예약가능 표시</div><br />
+								<input type="radio" name="table_num" value="12" />
+							</div>
+
+							<div class="button" align="center">
+								<button class="btn btn-primary" type="button" name="selectChange"
+									value="테이블 선택 변경" onclick="fnCancel()">테이블 선택 변경</button>
+							</div>
+
+
+						</div>
+
+		</form>
+<!-- 	</table> -->
 	
-	
-	<table name="table_num" border="2" style="border-color:black;" >
-		<tr>
-			<td><label><input type="checkbox" />1번 테이블</label></td>
-			<td><label><input type="checkbox" />2번 테이블</label></td>
-			<td><label><input type="checkbox" />3번 테이블</label></td>
-			<td><label><input type="checkbox" />4번 테이블</label></td>
-			<td><label><input type="checkbox" />5번 테이블</label></td>
-			<td><label><input type="checkbox" />6번 테이블</label></td>
-			<td><label><input type="checkbox" />7번 테이블</label></td>
-			<td><label><input type="checkbox" />8번 테이블</label></td>
-		</tr>
-		
-	</table>
-	<button class="btn btn-primary" type="button" name="selectChange" value="테이블 선택 변경" onclick="fnCancel()">테이블 선택 변경</button>
+	<br />
+	<div class="button" align="center" >
+	<button class="btn btn-primary" type="button" name="selectChange"
+		value="테이블 선택 변경" onclick="fnCancel()">테이블 선택 변경</button>
+	</div>
 </body>
 </html>
+
+
+
+<!-- 		<tr> -->
+<!-- 			<div style="background-color: black;"> -->
+<!-- 				<td><label>1번 테이블<input type="checkbox" /></label></td> -->
+<!-- 			</div> -->
+<!-- 			<td><label>2번 테이블<input type="checkbox" /></label></td> -->
+<!-- 			<td><label>3번 테이블<input type="checkbox" /></label></td> -->
+<!-- 			<td><label>4번 테이블<input type="checkbox" /></label></td> -->
+<!-- 			<td><label>5번 테이블<input type="checkbox" /></label></td> -->
+<!-- 			<td><label>6번 테이블<input type="checkbox" /></label></td> -->
+<!-- 			<td><label>7번 테이블<input type="checkbox" /></label></td> -->
+<!-- 			<td><label>8번 테이블<input type="checkbox" /></label></td> -->
+<!-- 		</tr> -->

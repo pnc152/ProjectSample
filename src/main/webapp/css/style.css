@@ -12,6 +12,51 @@ body {
 	-webkit-font-smoothing: antialiased; 
 	text-rendering: optimizeLegibility;
 }
+
+.calendar {
+    font-size: 0.75em;
+    width: 150px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    float: left;
+}
+.calendarP{
+	margin-top: 50px;
+	margin-left: 50px;
+}
+.tableBox {
+    
+    margin-top: 50px;
+    margin-left : 50px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    float: left;
+}
+
+.button {
+    font-size: 0.75em;
+    width: 420px;
+    margin: 15px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    float: left;
+  	margin-left: 300px;
+}
+.box {
+    font-size: 0.75em;
+    width: 150px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    float: left;
+}
+.box strong {
+    color: skyblue;
+}
+.box .info {
+    color: #999;
+}
 p, li {
 	color:#282828;
 	font-family: 'Open Sans', sans-serif;
